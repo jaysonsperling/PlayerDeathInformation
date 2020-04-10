@@ -27,12 +27,18 @@ public class CommandDeathback implements CommandExecutor {
 			
 			if (player.hasPermission("playerdeathinformation.deathback.use")) {
 				if (ticksSinceLastDeath < ticksToExecuteCommand) {
-					PlayerDeathInformation.sendPlayerMessage(player, "Teleporting you back to your death point!");
 					
 					List<MetadataValue> playerDeathLocationX = (List<MetadataValue>) player.getMetadata("playerDeathLocationX");
 					List<MetadataValue> playerDeathLocationY = (List<MetadataValue>) player.getMetadata("playerDeathLocationY");
 					List<MetadataValue> playerDeathLocationZ = (List<MetadataValue>) player.getMetadata("playerDeathLocationZ");
 					List<MetadataValue> playerDeathLocationWorld = (List<MetadataValue>) player.getMetadata("playerDeathLocationWorld");
+					
+					if (playerDeathLocationX.isEmpty() || playerDeathLocationY.isEmpty() || playerDeathLocationY.isEmpty() || playerDeathLocationWorld.isEmpty()) {
+						PlayerDeathInformation.sendPlayerMessage(player, "No death point to teleport you back to!");
+						return false;
+					}
+					
+					PlayerDeathInformation.sendPlayerMessage(player, "Teleporting you back to your death point!");
 
 					player.teleport(new Location(Bukkit.getServer().getWorld(playerDeathLocationWorld.get(0).asString()), playerDeathLocationX.get(0).asDouble(), playerDeathLocationY.get(0).asDouble(), playerDeathLocationZ.get(0).asDouble()));
 									
