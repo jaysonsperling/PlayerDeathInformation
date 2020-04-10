@@ -1,0 +1,16 @@
+name: PlayerDeathInformation
+main: net.tluw.sperling.PlayerDeathInformation
+version: 0.0.1
+api-version: 1.15
+description: Shows information about a player's death in the console and to the player
+author: JaysonBond
+commands:
+  pdi:
+    reload:
+      description: Reload the plugin configuration
+      permissions: playerdeathinformation.admin.reload
+      usage: /pdi reload
+  deathback:
+    description: Go back to where you died
+    permissions: playerdeathinformation.deathback.use
+    usage: /deathback
