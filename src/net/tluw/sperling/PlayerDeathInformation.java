@@ -10,6 +10,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PlayerDeathInformation extends JavaPlugin {
 	
+	// TODO
+	// Move the prefixes into the config file
+	
 	public static FileConfiguration config;
 	public static String messageConsolePrefix = "[PlayerDeathInformation] ";
 	public static String messageInGamePrefix = "Death Info> ";

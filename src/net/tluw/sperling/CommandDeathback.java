@@ -15,6 +15,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class CommandDeathback implements CommandExecutor {
+	
+	// TODO
+	// The conditionals below can be ripped out and put into their own negative conditionals
+	// that way we don't have this huge nested chunk of code...
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String arg2, String[] arg3) {
