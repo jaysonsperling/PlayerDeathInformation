@@ -3,6 +3,7 @@ package net.tluw.sperling;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class PlayerDeathInformation extends JavaPlugin {
 	
 	public static FileConfiguration config;
-	public static String messageConsolePrefix = "[PlayerDeathInformation]";
+	public static String messageConsolePrefix = "[PlayerDeathInformation] ";
 	public static String messageInGamePrefix = "Death Info> ";
 	
 	@Override
@@ -28,10 +29,10 @@ public class PlayerDeathInformation extends JavaPlugin {
 	public void onDisable() {
 		// stubbed
 	}
-
+	
 	public static void sendConsoleMessage(String consoleMessage) {
 		Logger log = Bukkit.getLogger();
-		log.info(messageConsolePrefix + " " + consoleMessage);
+		log.info(messageConsolePrefix + consoleMessage);
 	}
 	
 	public static void sendPlayerMessage(Player player, String playerMessage) {
@@ -40,6 +41,10 @@ public class PlayerDeathInformation extends JavaPlugin {
 	
 	public static void sendAdminMessage(String adminMessage) {
 		// stubbed
+	}
+	
+	public static void sendSenderMessage(CommandSender sender, String message) {
+		sender.sendMessage(messageConsolePrefix + message);
 	}
 	
 }

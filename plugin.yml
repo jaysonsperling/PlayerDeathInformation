@@ -6,10 +6,10 @@ description: Shows information about a player's death in the console and to the 
 author: JaysonBond
 commands:
   pdi:
-    reload:
-      description: Reload the plugin configuration
-      permissions: playerdeathinformation.admin.reload
-      usage: /pdi reload
+    info:
+      description: Shows the current configuration
+      permissions: playerdeathinformation.admin.info
+      usage: /pdi info
   deathback:
     description: Go back to where you died
     permissions: playerdeathinformation.deathback.use

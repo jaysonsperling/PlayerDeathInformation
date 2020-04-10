@@ -40,6 +40,9 @@ public class CommandDeathback implements CommandExecutor {
 					
 					PlayerDeathInformation.sendPlayerMessage(player, "Teleporting you back to your death point!");
 
+					// TODO: Add code to make the user have to enter the same command again
+					// Maybe track that state w/ another metadatavalue?
+					
 					player.teleport(new Location(Bukkit.getServer().getWorld(playerDeathLocationWorld.get(0).asString()), playerDeathLocationX.get(0).asDouble(), playerDeathLocationY.get(0).asDouble(), playerDeathLocationZ.get(0).asDouble()));
 									
 					if (player.hasPermission("playerdeathinformation.deathback.god")) {

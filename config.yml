@@ -3,5 +3,5 @@ send-to-ops: true
 show-death-coordinates: true
 show-deathback-message: true
 deathback-available-seconds: 30
-deathback-god-seconds: 5
+deathback-god-seconds: 10
 require-deathback-confirmation: true
